@@ -103,10 +103,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
             <div className="inline-flex items-center gap-2.5 pl-1.5 pr-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-sm">
               <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-400/15 text-teal-300 text-[11px] font-alt font-600">
                 <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
-                Jammu, J&amp;K
+                ProdigySoft
               </span>
               <span className="text-xs text-slate-400 font-alt">
-                Software engineering, from Jammu to the world
+                Building software that drives business growth
               </span>
             </div>
 
