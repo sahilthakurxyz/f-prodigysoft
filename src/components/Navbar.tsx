@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowUpRight, Menu, X, MapPin } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { ArrowUpRight, Menu, X, MapPin } from "lucide-react";
 
 interface NavbarProps {
   onOpenConsultation: (topic?: string) => void;
@@ -11,37 +11,41 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'What We Do', href: '#services' },
-    { name: 'Who We Serve', href: '#clients' },
-    { name: 'Process', href: '#process' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: "What We Do", href: "#services" },
+    { name: "Who We Serve", href: "#clients" },
+    { name: "Process", href: "#process" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
   ];
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'
+        scrolled ? "glass-nav py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand */}
-          <a href="#" className="flex items-center gap-3 group" aria-label="ProdigySoft Home">
+          <a
+            href="#"
+            className="flex items-center gap-3 group"
+            aria-label="ProdigySoft Home"
+          >
             <div className="relative w-10 h-10 shrink-0">
               <div className="absolute inset-0 rounded-[13px] bg-gradient-to-br from-teal-400 via-sky-500 to-indigo-500 rotate-6 group-hover:rotate-12 transition-transform duration-500" />
               <div className="absolute inset-[2px] rounded-[11px] bg-[#070b16] flex items-center justify-center">
-                <span className="font-display font-800 text-lg text-transparent bg-clip-text bg-gradient-to-br from-teal-300 to-indigo-300">P</span>
+                <img src="/src/images/logo.png" />
               </div>
             </div>
             <div className="flex flex-col leading-none">
@@ -49,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
                 Prodigy<span className="text-teal-300">Soft</span>
               </span>
               <span className="text-[10px] tracking-[0.2em] text-slate-500 font-alt uppercase mt-1 flex items-center gap-1">
-                <MapPin className="w-2.5 h-2.5 text-teal-400" /> Jammu · Built for Scale
+                <MapPin className="w-2.5 h-2.5 text-teal-400" /> Built for Scale
               </span>
             </div>
           </a>
@@ -71,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <button
-              onClick={() => onOpenConsultation('Start Your Project')}
+              onClick={() => onOpenConsultation("Start Your Project")}
               className="group relative px-5 py-2.5 rounded-full bg-white text-[#070b16] text-sm font-alt font-600 flex items-center gap-1.5 overflow-hidden transition-transform hover:-translate-y-0.5"
             >
               <span className="relative z-10">Start Your Project</span>
@@ -85,7 +89,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
             className="md:hidden p-2.5 rounded-xl text-slate-200 bg-white/5 border border-white/10"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </button>
         </div>
       </div>
@@ -105,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
           <button
             onClick={() => {
               setMobileMenuOpen(false);
-              onOpenConsultation('Mobile Start');
+              onOpenConsultation("Mobile Start");
             }}
             className="w-full mt-2 py-3 rounded-xl bg-white text-[#070b16] font-alt font-600 text-sm"
           >

@@ -7,7 +7,7 @@ interface Props {
   topic?: string;
   onClose: () => void;
 }
-const WHATSAPP_NUMBER = "6006642782";
+const WHATSAPP_NUMBER = "916006642782";
 export const ConsultationModal: React.FC<Props> = ({
   isOpen,
   topic,
